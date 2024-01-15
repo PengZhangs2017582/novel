@@ -21,6 +21,8 @@ type Writer struct {
 	Qq           interface{} //
 	RealName     interface{} // 真名
 	IdNo         interface{} // 身份证号
+	IsAdmin      interface{} // 是否是管理员
+	RoleIds      interface{} // 角色id
 	CreatedAt    *gtime.Time //
 	UpdatedAt    *gtime.Time //
 	DeletedAt    *gtime.Time //

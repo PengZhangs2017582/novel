@@ -12,7 +12,8 @@ type WriterCreateOrLoginInput struct {
 }
 
 type WriterCreateOrLoginOutput struct {
-	Id uint
+	Id      uint
+	PenName string
 }
 
 // type GetCodeInput struct {

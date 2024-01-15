@@ -29,6 +29,8 @@ type WriterColumns struct {
 	Qq           string //
 	RealName     string // 真名
 	IdNo         string // 身份证号
+	IsAdmin      string // 是否是管理员
+	RoleIds      string // 角色id
 	CreatedAt    string //
 	UpdatedAt    string //
 	DeletedAt    string //
@@ -45,6 +47,8 @@ var writerColumns = WriterColumns{
 	Qq:           "qq",
 	RealName:     "real_name",
 	IdNo:         "id_no",
+	IsAdmin:      "is_admin",
+	RoleIds:      "role_ids",
 	CreatedAt:    "created_at",
 	UpdatedAt:    "updated_at",
 	DeletedAt:    "deleted_at",

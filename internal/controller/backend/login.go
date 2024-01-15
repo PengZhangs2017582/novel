@@ -25,7 +25,7 @@ func New() *cLogin {
 	return &cLogin{}
 }
 
-func (c *cLogin) CreateOrLogin(ctx context.Context, req *backend.CreateOrLoginReq) (res *backend.CreateOrLoginRes, err error) {
+func (c *cLogin) CreateOrLogin(ctx context.Context, req *backend.CreateOrLoginReq) (res *backend.CreateLoginRes, err error) {
 	input := model.WriterCreateOrLoginInput{}
 	err = gconv.Scan(req, &input)
 	if err != nil {
@@ -40,8 +40,8 @@ func (c *cLogin) CreateOrLogin(ctx context.Context, req *backend.CreateOrLoginRe
 	if err != nil {
 		return nil, err
 	}
-
-	return &backend.CreateOrLoginRes{Id: writer.Id}, nil
+	return &backend.CreateLoginRes{Id: writer.Id, PenName: writer.PenName}, nil
+	// return &backend.CreateOrLoginRes{Id: writer.Id}, nil
 }
 
 func (c *cLogin) GetPhoneCode(ctx context.Context, req *backend.GetCodeReq) (res *backend.GetCodeRes, err error) {

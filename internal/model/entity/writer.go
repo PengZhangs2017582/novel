@@ -19,6 +19,8 @@ type Writer struct {
 	Qq           string      `json:"qq"           description:""`
 	RealName     string      `json:"realName"     description:"真名"`
 	IdNo         string      `json:"idNo"         description:"身份证号"`
+	IsAdmin      uint        `json:"isAdmin"      description:"是否是管理员"`
+	RoleIds      string      `json:"roleIds"      description:"角色id"`
 	CreatedAt    *gtime.Time `json:"createdAt"    description:""`
 	UpdatedAt    *gtime.Time `json:"updatedAt"    description:""`
 	DeletedAt    *gtime.Time `json:"deletedAt"    description:""`

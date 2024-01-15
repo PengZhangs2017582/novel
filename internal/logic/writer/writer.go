@@ -8,7 +8,6 @@ package writer
 
 import (
 	"context"
-	"fmt"
 	"time"
 
 	"github.com/gogf/gf/v2/errors/gerror"
@@ -72,8 +71,8 @@ func (s *sWriter) CreateOrLogin(ctx context.Context, in model.WriterCreateOrLogi
 	// if writerInfo == nil {
 	// 	return gerror.New(`Passport or Password not correct`)
 	// }
-	fmt.Println("-------------------------")
-	fmt.Println(writerInfo)
+	// fmt.Println("-------------------------")
+	// fmt.Println(writerInfo)
 
 	// err1 := service.Session().SetWriter(ctx, &writerInfo)
 	// if err1 != nil {
@@ -84,12 +83,12 @@ func (s *sWriter) CreateOrLogin(ctx context.Context, in model.WriterCreateOrLogi
 	// 	Id: writerInfo.Id,
 	// })
 
-	return &model.WriterCreateOrLoginOutput{Id: writerInfo.Id}, nil
+	return &model.WriterCreateOrLoginOutput{Id: writerInfo.Id, PenName: writerInfo.PenName}, nil
 }
 
 func (s *sWriter) CheckPhoneVerifyCode(ctx context.Context, phone string, code, codeType int) (bool, error) {
 
-	time1 := time.Now().Add(-1 * time.Minute)
+	time1 := time.Now().Add(-10 * time.Minute)
 	dateTime := time1.Format("2006-01-02 15:04:05")
 
 	count, err := dao.PhoneVerify.Ctx(ctx).Where(do.PhoneVerify{
